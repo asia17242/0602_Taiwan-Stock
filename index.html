@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,9 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Custom CSS -->
@@ -15,6 +18,7 @@
     <!-- SheetJS (XLSX) CDN -->
     <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
 </head>
+
 <body>
     <!-- Background Glow Effects -->
     <div class="glow-bg glow-purple"></div>
@@ -30,6 +34,12 @@
                     <span>台股 AI 綜合分析團隊</span>
                 </div>
             </div>
+            <nav class="header-nav">
+                <a href="https://github.com/asia17242/0602_Taiwan-Stock/blob/main/README.md" target="_blank"><i
+                        class="fa-solid fa-book"></i> 專案說明</a>
+                <a href="https://github.com/asia17242/0602_Taiwan-Stock/blob/main/PRD.md" target="_blank"><i
+                        class="fa-solid fa-file-lines"></i> 規格文件</a>
+            </nav>
             <div class="system-status">
                 <span class="status-dot green"></span>
                 <span class="status-text">6 代理人系統已連線</span>
@@ -40,7 +50,7 @@
         <section class="search-panel glass-card">
             <h2><i class="fa-solid fa-magnifying-glass-chart"></i> 輸入個股啟動協作分析</h2>
             <p class="subtitle">輸入台灣上市、上櫃或興櫃的股號或股名，由五位 AI 專家為您進行交叉論證與策略產出。</p>
-            
+
             <div class="search-form-group">
                 <div class="input-wrapper">
                     <i class="fa-solid fa-keyboard input-icon"></i>
@@ -48,6 +58,9 @@
                 </div>
                 <button id="analyze-btn" class="glow-btn">
                     <span><i class="fa-solid fa-play"></i> 啟動協作分析</span>
+                </button>
+                <button id="macro-analyze-btn" class="glow-btn macro-btn">
+                    <span><i class="fa-solid fa-earth-americas"></i> 全球總經診斷</span>
                 </button>
             </div>
 
@@ -65,7 +78,11 @@
             <div class="rec-grid">
                 <!-- Buy Recommendations -->
                 <div class="rec-card buy-card glass-card">
-                    <h3 class="rec-title buy-title"><i class="fa-solid fa-circle-arrow-up"></i> 5角色綜合評估：建議買進前 10 名個股</h3>
+                    <h3 class="rec-title buy-title">
+                        <i class="fa-solid fa-circle-arrow-up"></i>
+                        5角色綜合評估：建議買進前 10 名個股
+                        <span id="buy-update-time" class="update-timestamp">最後更新：--:--:--</span>
+                    </h3>
                     <div class="table-container">
                         <table class="report-table rec-table">
                             <thead>
@@ -86,7 +103,11 @@
 
                 <!-- Sell Recommendations -->
                 <div class="rec-card sell-card glass-card">
-                    <h3 class="rec-title sell-title"><i class="fa-solid fa-circle-arrow-down"></i> 5角色綜合評估：建議賣出前 10 名個股</h3>
+                    <h3 class="rec-title sell-title">
+                        <i class="fa-solid fa-circle-arrow-down"></i>
+                        5角色綜合評估：建議賣出前 10 名個股
+                        <span id="sell-update-time" class="update-timestamp">最後更新：--:--:--</span>
+                    </h3>
                     <div class="table-container">
                         <table class="report-table rec-table">
                             <thead>
@@ -127,7 +148,9 @@
                     </div>
                     <div class="agent-status-bar">
                         <span class="status-indicator">待命中...</span>
-                        <div class="progress"><div class="progress-bar"></div></div>
+                        <div class="progress">
+                            <div class="progress-bar"></div>
+                        </div>
                     </div>
                 </div>
 
@@ -142,7 +165,9 @@
                     </div>
                     <div class="agent-status-bar">
                         <span class="status-indicator">待命中...</span>
-                        <div class="progress"><div class="progress-bar"></div></div>
+                        <div class="progress">
+                            <div class="progress-bar"></div>
+                        </div>
                     </div>
                 </div>
 
@@ -157,7 +182,9 @@
                     </div>
                     <div class="agent-status-bar">
                         <span class="status-indicator">待命中...</span>
-                        <div class="progress"><div class="progress-bar"></div></div>
+                        <div class="progress">
+                            <div class="progress-bar"></div>
+                        </div>
                     </div>
                 </div>
 
@@ -172,7 +199,9 @@
                     </div>
                     <div class="agent-status-bar">
                         <span class="status-indicator">待命中...</span>
-                        <div class="progress"><div class="progress-bar"></div></div>
+                        <div class="progress">
+                            <div class="progress-bar"></div>
+                        </div>
                     </div>
                 </div>
 
@@ -187,7 +216,9 @@
                     </div>
                     <div class="agent-status-bar">
                         <span class="status-indicator">待命中...</span>
-                        <div class="progress"><div class="progress-bar"></div></div>
+                        <div class="progress">
+                            <div class="progress-bar"></div>
+                        </div>
                     </div>
                 </div>
 
@@ -202,7 +233,9 @@
                     </div>
                     <div class="agent-status-bar">
                         <span class="status-indicator">待命中...</span>
-                        <div class="progress"><div class="progress-bar"></div></div>
+                        <div class="progress">
+                            <div class="progress-bar"></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -224,7 +257,8 @@
                 <div class="report-title-wrapper">
                     <span class="tag-report">INVESTMENT DECISION REPORT</span>
                     <h2 id="report-title">📈 2317 鴻海 綜合分析報告</h2>
-                    <p class="report-meta">分析時間：<span id="report-time">2026-06-02</span> | 決策引擎版本: Antigravity Multi-Agent v2.5</p>
+                    <p class="report-meta">分析時間：<span id="report-time">2026-06-02</span> | 決策引擎版本: Antigravity
+                        Multi-Agent v2.5</p>
                 </div>
                 <button id="export-btn" class="export-btn">
                     <i class="fa-solid fa-file-excel"></i> 匯出 Excel 報表
@@ -233,7 +267,8 @@
 
             <!-- Section 1: Expert Views Summary Table -->
             <section class="report-block glass-card">
-                <h3 class="block-title"><i class="fa-solid fa-table-list"></i> 一、 專家觀點摘要表 <span class="click-tip"><i class="fa-solid fa-circle-info"></i> 點擊領域名稱查看深度數據圖表</span></h3>
+                <h3 class="block-title"><i class="fa-solid fa-table-list"></i> 一、 專家觀點摘要表 <span class="click-tip"><i
+                            class="fa-solid fa-circle-info"></i> 點擊領域名稱查看深度數據圖表</span></h3>
                 <div class="table-container">
                     <table class="report-table">
                         <thead>
@@ -262,7 +297,8 @@
 
                 <!-- Cons Card -->
                 <div class="cross-card cons glass-card">
-                    <h3 class="block-title cons-title"><i class="fa-solid fa-circle-chevron-down"></i> 二、 空方風險（潛在隱憂）</h3>
+                    <h3 class="block-title cons-title"><i class="fa-solid fa-circle-chevron-down"></i> 二、 空方風險（潛在隱憂）
+                    </h3>
                     <ul class="cross-list" id="cons-list">
                         <!-- Populated by JS -->
                     </ul>
@@ -272,7 +308,7 @@
             <!-- Section 3: Summary Rating and Operational Strategy -->
             <section class="report-block strategy-block glass-card">
                 <h3 class="block-title"><i class="fa-solid fa-shield-halved"></i> 三、 綜合評等與操作策略</h3>
-                
+
                 <div class="strategy-container">
                     <!-- Rating Showcase -->
                     <div class="rating-box">
@@ -293,8 +329,40 @@
                     </div>
                 </div>
             </section>
+
+            <!-- Section 4: Stock Masters Group -->
+            <section class="report-block masters-block glass-card">
+                <h3 class="block-title"><i class="fa-solid fa-user-astronaut"></i> 四、 股市高手群組選股建議</h3>
+
+                <div class="masters-tabs">
+                    <button class="master-tab-btn active" data-master="oneil">
+                        <i class="fa-solid fa-gauge-high"></i> 威廉‧歐尼爾 (CAN SLIM)
+                    </button>
+                    <button class="master-tab-btn" data-master="buffett">
+                        <i class="fa-solid fa-vault"></i> 華倫‧巴菲特 (價值投資)
+                    </button>
+                    <button class="master-tab-btn" data-master="lynch">
+                        <i class="fa-solid fa-chart-line-up"></i> 彼得‧林區 (成長與 PEG)
+                    </button>
+                    <button class="master-tab-btn" data-master="graham">
+                        <i class="fa-solid fa-scale-balanced"></i> 班傑明‧葛拉漢 (安全邊際)
+                    </button>
+                    <button class="master-tab-btn" data-master="greenblatt">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i> 喬伊‧葛林布雷 (神奇公式)
+                    </button>
+                    <button class="master-tab-btn" data-master="macro_master">
+                        <i class="fa-solid fa-earth-asia"></i> 總體經濟高手分析
+                    </button>
+                </div>
+
+                <div class="master-content-wrapper">
+                    <div id="master-content-body">
+                        <!-- Loaded dynamically by JS -->
+                    </div>
+                </div>
+            </section>
         </main>
-        
+
         <!-- App Footer -->
         <footer class="app-footer">
             <p>© 2026 Antigravity Stock AI. 本報告為系統模擬與資料整合，不構成實際投資建議，投資有風險，入市需謹慎。</p>
@@ -311,10 +379,18 @@
                 </div>
                 <button id="modal-close-btn" class="modal-close-btn"><i class="fa-solid fa-xmark"></i></button>
             </header>
-            
+
             <div class="modal-body">
                 <!-- 1. Technical content -->
                 <div id="modal-content-tech" class="modal-sub-content hidden">
+                    <div class="kline-range-tabs">
+                        <button class="range-tab-btn active" data-range="60">1季</button>
+                        <button class="range-tab-btn" data-range="120">半年</button>
+                        <button class="range-tab-btn" data-range="240">1年</button>
+                        <button class="range-tab-btn" data-range="720">3年</button>
+                        <button class="range-tab-btn" data-range="1200">5年</button>
+                        <button class="range-tab-btn" data-range="2400">10年</button>
+                    </div>
                     <div class="kline-legend">
                         <span class="legend-item"><span class="legend-color ma5"></span>5MA</span>
                         <span class="legend-item"><span class="legend-color ma20"></span>20MA</span>
@@ -330,6 +406,13 @@
 
                 <!-- 2. Fundamental content -->
                 <div id="modal-content-fund" class="modal-sub-content hidden">
+                    <div class="fund-range-tabs">
+                        <button class="fund-tab-btn active" data-view="margins">獲利三率 (4季)</button>
+                        <button class="fund-tab-btn" data-view="revenue">月營收趨勢 (5年)</button>
+                        <button class="fund-tab-btn" data-view="longterm">10年獲利統計</button>
+                        <button class="fund-tab-btn" data-view="periver">P/E 河流圖</button>
+                    </div>
+
                     <div class="fund-metrics-grid">
                         <div class="metric-card">
                             <span class="metric-label">近一季 EPS</span>
@@ -348,9 +431,9 @@
                             <span class="metric-value" id="fund-yield">-- %</span>
                         </div>
                     </div>
-                    
-                    <h4 class="sub-title"><i class="fa-solid fa-chart-area"></i> 獲利三率趨勢圖 (%)</h4>
-                    <div class="kline-legend">
+
+                    <h4 class="sub-title" id="fund-chart-title"><i class="fa-solid fa-chart-area"></i> 獲利三率趨勢圖 (%)</h4>
+                    <div class="kline-legend" id="fund-chart-legend">
                         <span class="legend-item"><span class="legend-color margin-gross"></span>毛利率</span>
                         <span class="legend-item"><span class="legend-color margin-op"></span>營業利益率</span>
                         <span class="legend-item"><span class="legend-color margin-net"></span>稅後純益率</span>
@@ -358,37 +441,100 @@
                     <div class="canvas-container">
                         <canvas id="finance-canvas" width="800" height="300"></canvas>
                     </div>
+                    <p class="chart-desc" id="fund-chart-desc">*說明：展示近四季財務指標變動趨勢。</p>
                 </div>
 
                 <!-- 3. Chip content -->
                 <div id="modal-content-chip" class="modal-sub-content hidden">
-                    <h4 class="sub-title"><i class="fa-solid fa-table-cells"></i> 法人與主力天數買賣超統計 (單位：張)</h4>
-                    <div class="table-container">
-                        <table class="report-table chip-table">
-                            <thead>
-                                <tr>
-                                    <th>主體</th>
-                                    <th>5天</th>
-                                    <th>10天</th>
-                                    <th>20天</th>
-                                    <th>60天</th>
-                                    <th>240天</th>
-                                </tr>
-                            </thead>
-                            <tbody id="chip-table-body">
-                                <!-- Populated dynamically -->
-                            </tbody>
-                        </table>
+                    <div class="chip-range-tabs">
+                        <button class="chip-tab-btn active" data-view="summary">買賣超統計</button>
+                        <button class="chip-tab-btn" data-view="inst">三大法人趨勢</button>
+                        <button class="chip-tab-btn" data-view="banks">八大行庫趨勢</button>
+                        <button class="chip-tab-btn" data-view="mainforce">當日主力進出</button>
+                        <button class="chip-tab-btn" data-view="insider">內部人持股(5年)</button>
+                        <button class="chip-tab-btn" data-view="holders">大戶散戶對照(1年)</button>
                     </div>
-                    <p class="chart-desc">*說明：買超張數以紅色標記，賣超張數以綠色標記。</p>
+
+                    <div id="chip-view-summary">
+                        <h4 class="sub-title"><i class="fa-solid fa-table-cells"></i> 法人與主力天數買賣超統計 (單位：張)</h4>
+                        <div class="table-container">
+                            <table class="report-table chip-table">
+                                <thead>
+                                    <tr>
+                                        <th>主體</th>
+                                        <th>5天</th>
+                                        <th>10天</th>
+                                        <th>20天</th>
+                                        <th>60天</th>
+                                        <th>240天</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="chip-table-body">
+                                    <!-- Populated dynamically -->
+                                </tbody>
+                            </table>
+                        </div>
+                        <p class="chart-desc">*說明：買超張數以紅色標記，賣超張數以綠色標記。</p>
+                    </div>
+
+                    <div id="chip-view-chart" class="hidden">
+                        <h4 class="sub-title" id="chip-chart-title">圖表標題</h4>
+                        <div class="canvas-container">
+                            <canvas id="chip-canvas" width="800" height="350"></canvas>
+                        </div>
+                        <div class="kline-legend" id="chip-chart-legend"></div>
+                        <p class="chart-desc" id="chip-chart-desc"></p>
+                    </div>
+
+                    <div id="chip-view-mainforce" class="hidden">
+                        <div class="branch-suggestion-box">
+                            <strong><i class="fa-solid fa-robot"></i> 主力券商進出解讀 (當日)</strong>
+                            <p id="mainforce-suggestion-text">讀取中...</p>
+                        </div>
+                        <div class="branch-tables-wrapper">
+                            <div class="branch-table-container">
+                                <h5 class="branch-table-title buy"><i class="fa-solid fa-circle-arrow-up"></i> 主力買進前 15
+                                    名</h5>
+                                <table class="report-table">
+                                    <thead>
+                                        <tr>
+                                            <th>序</th>
+                                            <th>券商</th>
+                                            <th>張數</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="mainforce-buy-tbody"></tbody>
+                                </table>
+                            </div>
+                            <div class="branch-table-container">
+                                <h5 class="branch-table-title sell"><i class="fa-solid fa-circle-arrow-down"></i> 主力賣出前
+                                    15 名</h5>
+                                <table class="report-table">
+                                    <thead>
+                                        <tr>
+                                            <th>序</th>
+                                            <th>券商</th>
+                                            <th>張數</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="mainforce-sell-tbody"></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- 4. Macro content -->
                 <div id="modal-content-macro" class="modal-sub-content hidden">
+                    <h4 class="sub-title"><i class="fa-solid fa-compass"></i> 全球宏觀環境綜合評等 (雷達圖)</h4>
+                    <div class="canvas-container macro-radar-container" style="height: 350px;">
+                        <canvas id="macro-radar-canvas" width="500" height="350"></canvas>
+                    </div>
+
                     <div class="macro-indicators-grid" id="macro-indicators">
                         <!-- Dynamically filled -->
                     </div>
-                    
+
                     <h4 class="sub-title"><i class="fa-solid fa-newspaper"></i> 相關產業與總經新聞</h4>
                     <div class="news-list" id="macro-news-list">
                         <!-- Dynamically filled -->
@@ -432,16 +578,17 @@
                         <button class="branch-tab-btn" data-days="60">60日</button>
                         <button class="branch-tab-btn" data-days="240">240日</button>
                     </div>
-                    
+
                     <div class="branch-suggestion-box">
                         <strong><i class="fa-solid fa-robot"></i> 分點專家分析建議</strong>
                         <p id="branch-suggestion-text">讀取中...</p>
                     </div>
-                    
+
                     <div class="branch-tables-wrapper">
                         <!-- Buy Branch Table -->
                         <div class="branch-table-container">
-                            <h5 class="branch-table-title buy"><i class="fa-solid fa-circle-arrow-up"></i> 前 15 大買進分點</h5>
+                            <h5 class="branch-table-title buy"><i class="fa-solid fa-circle-arrow-up"></i> 前 15 大買進分點
+                            </h5>
                             <table class="report-table branch-table">
                                 <thead>
                                     <tr>
@@ -456,10 +603,11 @@
                                 </tbody>
                             </table>
                         </div>
-                        
+
                         <!-- Sell Branch Table -->
                         <div class="branch-table-container">
-                            <h5 class="branch-table-title sell"><i class="fa-solid fa-circle-arrow-down"></i> 前 15 大賣出分點</h5>
+                            <h5 class="branch-table-title sell"><i class="fa-solid fa-circle-arrow-down"></i> 前 15 大賣出分點
+                            </h5>
                             <table class="report-table branch-table">
                                 <thead>
                                     <tr>
@@ -483,4 +631,5 @@
     <!-- Scripts -->
     <script src="app.js"></script>
 </body>
+
 </html>
